@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy, Buy, Buy!
+{% endblock %}
+
+{% block main %}
+        <h3>Buy Shares</h3><br>
+        <form action="/buy" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Ticker Symbol" type="text"/>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="qty" placeholder="QTY" type="text"/>
+        </div>
+
+        Available Cash: ${{ cash }}
+        <br><br>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+
+    <br>
+        <h4>Current Holdings</h5>
+
+    <table class=table-striped style="width:30%" align="center">
+    <!-- table header -->
+        <tr>{% for key in data[0] %}<th> {{ key }} </th>{% endfor %}</tr>
+    <!-- table rows -->
+    {% for item in data %}
+        <tr>{% for value in item.values() %}<td> {{ value }} </td>{% endfor %}</tr>
+    {% endfor %}
+    </table>
+    <br>
+{% endblock %}

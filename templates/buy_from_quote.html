@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy, Buy, Buy!
+{% endblock %}
+
+{% block main %}
+        <h3>Symbol: {{ symbol }} | Price: ${{ price }}</h3>
+
+        Your Cash: ${{ cash }}
+
+        <form action="/buy_from_quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="qty" placeholder="QTY" type="text"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+    </p>
+
+{% endblock %}

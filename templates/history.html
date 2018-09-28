@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account History
+{% endblock %}
+
+{% block main %}
+    <h3>Account History</h3>
+
+    <table class=table-striped style="width:50%" align="center">
+    <!-- table header -->
+    {% if dblog %}
+        <tr>
+        {% for key in dblog[0] %}
+            <th> {{ key }} </th>
+        {% endfor %}
+        </tr>
+    {% endif %}
+
+    <!-- table rows -->
+    {% for item in dblog %}
+        <tr>
+        {% for value in item.values() %}
+            <td> {{ value }} </td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+

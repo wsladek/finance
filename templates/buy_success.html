@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get Quote
+{% endblock %}
+
+{% block main %}
+    <h5>You bought:</h5>
+    <h4>{{ qty }} shares</h4>
+
+    of {{ symbol }}
+    at ${{ price }}
+    <br><br>
+    <form method="get" action="/">
+        <button class="btn btn-primary" type="submit">Home</button>
+    </form>
+
+{% endblock %}

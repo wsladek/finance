@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Quote
+{% endblock %}
+
+{% block main %}
+        <h3>Quote for: {{symbol}}</h3>
+
+        Name: {{name}}
+        <br>
+        Price: ${{price}}
+        <br>
+        Your Cash: ${{cash}}
+    </p>
+
+    <form action = /buy_from_quote method="get">
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+
+{% endblock %}

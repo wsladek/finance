@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Mr. Clean Slate
+{% endblock %}
+
+{% block main %}
+    <form action="/mrclean" method="post">
+        {{ instruction }}<br><br>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="password" placeholder="Password" type="password"/>
+        </div>
+        <button class="btn btn-primary" type="submit">{{button}}</button>
+    </form>
+{% endblock %}
